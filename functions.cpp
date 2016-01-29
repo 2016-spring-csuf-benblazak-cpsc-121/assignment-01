@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
-* Copyright &copy; 2016 Ian McQueen <ianmcqueen@live.ca>
+* Copyright &copy; 2016 Ian McQueen, Nathan Nguyen, and Mathew(didnt get his last name) <ianmcqueen@live.ca> 
 * Released under the [MIT License] (http://opensource.org/licenses/MIT)
 * ------------------------------------------------------------------------- */
 
