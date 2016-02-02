@@ -1,4 +1,7 @@
-
+/* ----------------------------------------------------------------------------
+* Copyright &copy; 2016 Robert Gonzalez <rgon@csu.fullerton.edu>
+* Released under the [MIT License] (http://opensource.org/licenses/MIT)
+* ------------------------------------------------------------------------- */
 /*A program to convert numbers into Roman numerals/*
 #include <iostream>
 #include <string>
