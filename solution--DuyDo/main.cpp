@@ -1,3 +1,11 @@
+/* ----------------------------------------------------------------------------
+* Copyright &copy; 2016 Duy Do <duy.ado@csu.fullerton.edu>
+* Released under the [MIT License] (http://opensource.org/licenses/MIT)
+* ------------------------------------------------------------------------- */
+
+/**
+* A short program to converts standard input decimal into Roman Numeral
+*/
 #include <iostream>
 #include <string>
 using std::cout;
