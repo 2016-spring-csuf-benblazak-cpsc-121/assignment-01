@@ -26,7 +26,7 @@ int main()// user interaction
 void converter(int temp)
 {   
     //check
-    if (temp<1||temp >4999){
+    if (temp<1||temp >3999){
         cout<<"Invalid input!"<<endl;return ;}
     
     /*calculating the numbers of each digit */
