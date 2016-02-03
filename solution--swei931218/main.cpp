@@ -11,21 +11,13 @@ void converter(int);
 int main()// user interaction
 {
     int original_integer;
-    cout << "Please enter an integer: ";
-    cin >> original_integer;
-    converter(original_integer);
-    
     char choice;
-    cout << "Would you like to convert another integer (Y/N)?";
-    cin >> choice;
-    
     do
     {cout << "Please enter an integer: ";
         cin >> original_integer;
         converter(original_integer);
         cout << "Would you like to convert another integer (Y/N)?";
         cin >> choice;}while (choice=='Y'||choice=='y');
-    
     while (choice=='N'||choice=='n'){return 0;}
     
     return 0;
