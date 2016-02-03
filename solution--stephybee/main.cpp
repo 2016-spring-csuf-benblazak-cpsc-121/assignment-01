@@ -1,3 +1,14 @@
+
+/* ----------------------------------------------------------------------------
+* Copyright & copy; 2016 Diem-Huong Bui <diemhuongbui@csu.fullerton.edu>
+* ------------------------------------------------------------------------- */
+
+/*
+* A program used to convert Arabic numbers to Roman Numerals.
+* Last Updated: 5:13pm Tuesday, February 2, 2016
+* References: 
+* http://literacy.kent.edu/Minigrants/Cinci/romanchart.htm
+*/
 #include <iostream>
 void romanNumConv(int num);
 int main() {
