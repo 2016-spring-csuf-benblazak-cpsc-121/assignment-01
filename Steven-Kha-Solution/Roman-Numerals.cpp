@@ -1,3 +1,8 @@
+/* ----------------------------------------------------------------------------
+* Copyright &copy; 2016 Ben Blazak <bblazak@fullerton.edu> Steven Kha <stevenvkha@gmail.com> Darren Vu <vuchampion@csu.fullerton.edu>
+* Released under the [MIT License] (http://opensource.org/licenses/MIT)
+* ------------------------------------------------------------------------- */
+
 #include <iostream>
 #include <string>
 using std::cout;
