@@ -1,111 +1,151 @@
-#include <iostream>
-
 int main()
 {
-        char choice = 'y';
-	
-do {
-	int x = 0;
-	int thousand = 0;
-	int hundred = 0;
-	int ten = 0;
-	int digits = 0;
-	std::cout << "Please enter in an integer.(Below 3,999) \n";
-	std::cin >> x ;
-	if (x < 0)
+	char choice = 'Y';
+	do //the loop to ask them if they want to do this agian
 	{
-		std::cout << "Enter a valid interger. (Below 3,999) \n" ;
-		std::cin >> x;
-	}
-	if (x > 3999)
-	{
-		std::cout << "Enter a valid interger. (Below 3,999) \n" ;
-		std::cin >> x;
-	}
-	//program
-	if (x >= 1000)
-	{
-		do
-		{
-			x -= 1000;
-			thousand++;
-		} while (x >= 1000);
-		
-		for (int y = 0; y < thousand; y++)
-		{
-			std::cout << "M";
-		}
-
-	}
-	if (x >= 100)
-	{
-		do
-		{
-			x -= 100;
-			hundred++;
-		} while (x >= 100);
-
-		for (int y = 0; y < hundred; y++)
-		{
-			std::cout << "C";
-		}
-	}
-	if (x >= 10)
-	{
-		do
-		{
-			x -= 10;
-			ten++;
-		} while (x >= 10);
-
-		for (int y = 0; y < ten; y++)
-		{
-			std::cout << "X";
-
-		}
-	}
-        if (x >= 1)
+		int x = 0;
+		int thousand = 0;
+		int hundred = 0;
+		int ten = 0;
+		int digits = 0;
+			std::cout << "Please enter in an integer.(Below 3,999) \n"; // to get a number
+			std::cin >> x;
+			do // to loop if they give an invald reponse
+			{
+				if (x <= 0)
+				{
+					std::cout << "Enter a valid interger. (Below 3,999) \n";
+					std::cin >> x;
+				}
+				if (x > 3999)
+				{
+					std::cout << "Enter a valid interger. (Below 3,999) \n";
+					std::cin >> x;
+				}
+			} while (x>3999 || x<=0);
+			if (x >= 1000) //program
 			{
 				do
 				{
-					x -= 1;
-					digits++;
-				} while (x > 0);
-
-				if (digits >= 5 && digits < 9)
+					x -= 1000;
+					thousand++;
+				} while (x >= 1000);
+				
+				for (int y = 0; y < thousand; y++)
 				{
-					digits -= 5;
-					std::cout << "V";
-					for (int y = 0; y < digits; y++)
-					{
-						std::cout << "I";
-					}
-				}
-				else if (digits == 4)
-				{
-					std::cout << "IV";
-				}
-				else if (digits == 9)
-				{
-					std::cout << "IX";
-				}
-				else
-				{
-					for (int y = 0; y < digits; y++)
-					{
-						std::cout << "I";
-					}
+					std::cout << "M";
 				}
 			}
-	std::cout << "\nDo you want to retry another number or execute the program. ( Y for Yes or N for No) \n";
-	std::cin >> choice;
-	if (!(choice == 'Y' || choice == 'y' || choice == 'N' || choice == 'n'))
-	{
-	std::cout << "Enter a valid response.\n";
-	std::cin >> choice;
-	}
-}
-while (choice == 'Y' || choice == 'y');
-	
+		if (x >= 100)
+		{
+			do
+			{
+				x -= 100;
+				hundred++;
+			} while (x >= 100);
+
+			if (hundred >= 5 && hundred < 9)
+			{
+				hundred -= 500;
+				std::cout << "D";
+				for (int y = 0; y < hundred; y++)
+				{
+					std::cout << "C";
+				}
+			}
+			else if (hundred == 4)
+			{
+				std::cout << "CD";
+			}
+			else if (hundred == 9)
+			{
+				std::cout << "CM";
+			}
+			else
+			{
+				for (int y = 0; y < hundred; y++)
+				{
+					std::cout << "C";
+				}
+			}
+		}
+		if (x >= 10)
+		{
+		do
+			{
+				x -= 10;
+				ten++;
+			} while (x >= 10);
+			
+			if (ten >= 5 && ten < 9)
+			{
+				ten -= 50;
+				std::cout << "L";
+				for (int y = 0; y < ten; y++)
+				{
+					std::cout << "X";
+				}
+			}
+			else if (ten == 4)
+			{
+				std::cout << "XL";
+			}
+			else if (ten == 9)
+			{
+				std::cout << "XC";
+			}
+			else
+			{
+				for (int y = 0; y < ten; y++)
+				{
+					std::cout << "X";
+				}
+			}
+		}
+		if (x >= 1)
+		{
+			do
+			{
+				x -= 1;
+				digits++;
+			} while (x > 0);
+
+			if (digits >= 5 && digits < 9)
+			{
+				digits -= 5;
+				std::cout << "V";
+				for (int y = 0; y < digits; y++)
+				{
+					std::cout << "I";
+				}
+			}
+			else if (digits == 4)
+			{
+				std::cout << "IV";
+			}
+			else if (digits == 9)
+			{
+				std::cout << "IX";
+			}
+			else
+			{
+				for (int y = 0; y < digits; y++)
+				{
+					std::cout << "I";
+				}
+			}
+		}
+		std::cout << "\nDo you want to retry another number or execute the program. ( Y for Yes or N for No) \n";
+		std::cin >> choice;
+			if (!(choice == 'Y' || choice == 'y' || choice == 'N' || choice == 'n'))
+			{
+				do
+				{
+					std::cout << "Enter a valid response.\n";
+					std::cin >> choice;
+				} while (!(choice == 'Y' || choice == 'y' || choice == 'N' || choice == 'n'));
+			}
+		
+	} while (choice == 'Y' || choice == 'y');
 	return 0;
 }
