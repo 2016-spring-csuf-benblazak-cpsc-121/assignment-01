@@ -1,0 +1,94 @@
+#include <iostream>
+using std::string;
+using std::cin;
+using std::endl;
+using std::cout;
+string final = "";
+    int anum;
+void first_test();
+
+
+int main()
+{
+
+    char yahnah;
+    do
+    {
+    cout << "Please enter an integer." << endl;
+    cin >> anum;
+    first_test();
+        cout << "Would you like to convert another integer? (Y/N)" << endl;
+        cin >>  yahnah;
+
+    }
+    while(yahnah == 'y' || yahnah == 'Y');}
+
+void first_test()
+{
+string nums1[] = {"", "I", "II", "III", "IV", "V", "VI","VII","VIII", "IX","X"};
+string nums2[] = {"", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"};
+string nums3[] = {"C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"};
+string nums4[] = {"M", "MM", "MMM", ""};
+int t;
+int w;
+int a;
+int d;
+        if(anum < 4000)
+                {
+                        if(anum < 11)
+                            {
+                                    if (anum == 10)
+                                        {
+                                                final += nums1[10];
+                                        }
+                                    int t = anum % 10;
+                    
+                                    final += nums1[t];
+                            }
+                        if ((anum > 10) && (anum < 101))
+                            {
+                                    int w = anum / 10;
+                                    final += nums2[w-1];
+                                    int t = anum % 10;
+                                    final += nums1[t];
+                                    if (t == 0)
+                                        {
+                                                final += "C";
+                                        }
+                                }
+                        if ((anum > 101) && (anum < 1001))
+                            {
+                                    int a = anum / 100;
+                                    final += nums3[a-1];
+                                    anum = anum - 100 * a;
+                                    int w = anum / 10;
+                                    final += nums2[w-1];
+                                    int t = anum % 10;
+                                    final += nums1[t];
+                                    if (a == 10)
+                                            {
+                                                final += "M";
+                                            }
+                            }
+                        if ((anum > 1001) && (anum < 4000))
+                            {
+                                    int d = anum / 1000;
+                                    final += nums4[d-1];
+
+                                    anum = anum - 1000 * d;
+                    
+                                    int a = anum / 100;
+                                    final += nums3[a-1];
+                    
+                                    anum = anum - 100 * a;
+                    
+                                    int w = anum / 10;
+                                    final += nums2[w-1];
+                    
+                                    int t = anum % 10;
+                                    final += nums1[t];
+                            }
+                cout << final << endl;
+                final = "";
+                }
+}
