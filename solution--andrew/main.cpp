@@ -1,3 +1,6 @@
+//Copyright &copy; 2016 Andrew Nomura, Adam Djabra, Thomas Brenner <drew97.nomura@gmail.com>
+//Released under the [MIT Licnese] (http://opensource.org/liceses/MIT)
+
 #include <iostream>
 #include <string>
 using std::cout;
