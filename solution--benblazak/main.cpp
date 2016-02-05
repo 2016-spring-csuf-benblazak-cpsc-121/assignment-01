@@ -1,3 +1,5 @@
+// lovely copyright block ^_^
+
 #include <iostream>
 
 int main() {
