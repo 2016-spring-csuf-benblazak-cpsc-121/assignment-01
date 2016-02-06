@@ -1,0 +1,134 @@
+/* ----------------------------------------------------------------------------
+* Copyright &copy; 2016 Austin Murrell <Austin@fullerton.edu>
+* Released under the [MIT License] (http://opensource.org/licenses/MIT)
+* ------------------------------------------------------------------------- */
+
+/**
+* A short program to convert integers into roman numerals.
+*/
+
+
+#include <iostream>
+using std::cout;
+using std::cin;
+
+int main()
+{
+
+char ask ='y';
+int num, anum, i, v, x, n, l, d, c, m;
+
+while (ask == 'y')
+    {
+        cout << "Please enter an integer: ";
+        cin >> num;
+        anum = (int)num;
+
+        if (anum >= 1000)
+            {  
+               m = anum / 1000;
+               n = 0;
+		        {
+		            for (n; n < m; n++)
+		                cout << "M";
+		        }
+	            anum = anum%1000;
+            }
+
+        if (anum >= 900)
+            { 
+              cout << "CM";
+              anum = anum%900;
+            }
+	    else if (anum >= 500)
+            {
+			    { d = anum / 500;
+			      n = 0;
+			for (n; n < d; n++)
+			cout << "D";
+			    }
+        anum = anum%500;
+            }
+       
+        if (anum >= 400)
+            {
+	        cout << "CD";
+	        anum = anum%400;
+            }       
+        else if (anum >= 100)
+	        {
+    		    {
+                 c = anum / 100;
+                 n = 0;
+                    for (n; n < c; n++)
+                    cout << "C";
+		        }
+		        anum = anum%100;
+	        }
+
+        if (anum >= 90)
+            {
+            cout << "XC";anum = anum%90;
+            }
+
+    	else if (anum >= 50)
+	        {
+			    {
+                l = anum / 50;
+			    n = 0;
+                     for (n; n < l; n++)
+                     cout << "L";
+		    	}
+	            anum = anum%50;
+        	}
+        if (anum >= 40)
+            {
+            cout << "XL";
+            anum = anum%40;
+            }
+       
+	    else if (anum >= 10)
+	        {
+			       {
+                x = anum / 10;
+                n = 0;
+                    for (n; n < x; n++)
+                    cout << "X";
+		    	    }
+	    	anum = anum%10;
+        	}
+
+        if (anum >= 9)
+            {
+            cout << "IX";
+            anum = anum%9;
+            }
+
+    	else if (anum >= 5)
+        	{
+		       	{
+                 v = anum / 5;
+                 n = 0;
+                    for (n; n < v; n++)
+                     cout << "V";
+		       	}
+	        	anum = anum%5;
+        	}
+        if (anum >= 4)
+            {
+            cout << "IV";
+            anum = anum%4;
+            }
+    	else if (anum >= 1)
+        	{
+             i = anum;
+             n = 0;
+                 for (n; n < i; n++)
+                 cout << "I";
+        	}
+	    cout << "\nWould you like to convert another integer? (y/n): ";
+	    cin >> ask;
+        
+    }
+    return 0;
+}
