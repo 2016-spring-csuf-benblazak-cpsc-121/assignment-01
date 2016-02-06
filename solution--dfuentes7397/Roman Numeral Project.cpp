@@ -1,27 +1,30 @@
-// Copyright &copy; 2016 David Fuentes <dfuentes7397@fullerton.edu>
-// Released under the [MIT License] (http://opensource.org/licenses/MIT)
+/* ----------------------------------------------------------------------------
+* Copyright &copy; 2016 David Fuentes <dfuentes7397@csu.fullerton.edu
+* Released under the [MIT License] (http://opensource.org/licenses/MIT)
+* ------------------------------------------------------------------------- */
 
+/**
+* A short program to convert integers into Roman Numerals.
+*Sources used
+*http://stackoverflow.com/questions/28750576/do-while-to-ask-user-to-repeat-entire-int-main-programme
+*http://www.dummies.com/how-to/content/working-with-functions-in-c.html
+*http://www.tutorialspoint.com/cplusplus/cpp_for_loop.htm
+*/
 #include <iostream>
-using std::cout;
-using std::cin;
-using std::endl;
-using std::string;
-int main()
+using namespace std;
+void romNum()
 {
 	double num;
-	int roman, m, d, c, l, x, v, i, n;
-
-	cout << "Enter a number and I will convert it to roman numerals: ";
 	cin >> num;
-	roman = (int)num;
-	m = roman / 1000;
-	d = ((roman % 1000) / 500);
-	c = ((roman % 500) / 100);
-	l = ((roman % 100 / 50));
-	x = ((roman % 50) / 10);
-	v = ((roman % 10) / 5);
-	i = ((roman % 5) / 1);
-	n = m + d + c + l + x + v + i;
+	int roman = (int)num;
+	int m = roman / 1000;
+	int d = ((roman % 1000) / 500);
+	int c = ((roman % 500) / 100);
+	int l = ((roman % 100 / 50));
+	int x = ((roman % 50) / 10);
+	int v = ((roman % 10) / 5);
+	int i = ((roman % 5) / 1);
+	int n = m + d + c + l + x + v + i;
 	while (n > 0)
 	{
 		{
@@ -54,6 +57,19 @@ int main()
 		}
 		n--;
 		cout << endl;
+	}
+}
+int main()
+{
+	for (;;)
+	{
+		cout << "Enter an integer and this program will convert it to roman numerals: ";
+		romNum();
+		cout << "Would you like to convert another integer? [y/n] (Please enter in lowercase letters)" << endl;
+		char answer;
+		cin >> answer;
+		if (answer != 'y')
+			break;
 	}
 	system("pause");
 	return 0;
