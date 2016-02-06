@@ -1,0 +1,61 @@
+/* ----------------------------------------------------------------------------
+* Copyright &copy; 2016 Bianca Balt <> Cecilia Tran <> Amber Pavlovich <amber.cook@csu.fullerton.edu>
+* Released under the [MIT License] (http://opensource.org/licenses/MIT)
+* ------------------------------------------------------------------------- */
+
+/**
+* A program to change integers to roman numerals
+*/
+
+#include <iostream>
+#include <string>
+using std::cout;
+using std::cin;
+using std::string;
+using std::endl;
+
+int main()
+{
+	int num;
+	int place; 
+	
+	char option = 'y';
+
+	string I[] = { "","I","II","III","IV","V","VI","VII","VIII","IX"};
+	string X[] = { "","X","XX","XXX","XL","L", "LX","LXX","LXXX","XC" };
+	string C[] = { "","C","CC","CCC","CD","D","DC","DCC","DCCC","CM" };
+	string M[] = { "","M","MM","MMM" };
+	
+	do
+	{
+		cout << "Please enter an integer between 1 and 3999." << endl;
+		cin >> num;
+		string Roman = "";
+
+		if (num < 1 || num > 3999)
+		{
+			cout << "Invalid number input";
+		}
+		else
+		{
+			place = num / 1000;
+			Roman += M[place];
+			num %= 1000;
+
+			place = num / 100;
+			Roman += C[place];
+			num %= 100;
+
+			place = num / 10;
+			Roman += X[place];
+			num %= 10;
+
+			Roman += I[num];
+		}
+		cout << Roman << endl;
+		cout << "Would you like to convert another integer(y/n)?";
+		cin >> option;		
+	} while (option != 'N' && option !='n');
+
+	return 0;
+}
