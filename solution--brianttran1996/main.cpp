@@ -31,7 +31,7 @@ int main()
         cout << std::endl;
         
         cout << "Convert another integer (Y/N)? ";
-        cin >> answer;
+        cin >> letter;
         
     } while (letter == 'y' || letter == 'Y');
     
