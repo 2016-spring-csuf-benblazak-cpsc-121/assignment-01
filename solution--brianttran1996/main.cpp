@@ -1,5 +1,6 @@
 /* ----------------------------------------------------------------------------
-* Copyright &copy; 2016 Ben Blazak <bblazak@fullerton.edu>, Brian Tran <brianttran1996@csu.fullerton.edu>, Gary Kam <kamgary109@csu.fullerton.edu>, and Rawabi Alayed <rawabialayed@csu.fullerton.edu>
+* Copyright &copy; 2016 Ben Blazak <bblazak@fullerton.edu>, Brian Tran <brianttran1996@csu.fullerton.edu>, 
+* Gary Kam <kamgary109@csu.fullerton.edu>, and Rawabi Alayed <rawabialayed@csu.fullerton.edu>
 * Released under the [MIT License] (http://opensource.org/licenses/MIT)
 * ------------------------------------------------------------------------- */
 
