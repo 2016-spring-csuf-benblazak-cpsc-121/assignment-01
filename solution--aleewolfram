@@ -1,0 +1,113 @@
+/* ----------------------------------------------------------------------------
+* Copyright &copy; 2016 Alexandria Wolfram <aleewolfram@fullerton.edu>
+* Released under the [MIT License] (http://opensource.org/licenses/MIT)
+* ------------------------------------------------------------------------- */
+
+/**
+* A program that converts an integer to roman numerals.
+*/
+
+#include <iostream>
+
+
+int howManyLetters (int number, int lettervalue)
+{
+    int b;
+    b = number / lettervalue;
+    return b;
+ }
+ 
+void spitOutLetters (int letter, std::string letterPrinted)
+{ 
+    for (letter; letter>=1; letter--)
+ { std::cout << letterPrinted; }
+ 
+}
+
+void converting (int UserEnteredInt)
+{ 
+    int I;  // Equivalent to 1
+    int IV; // Equivalent to 4
+    int V;  // Equivalent to 5
+    int IX; // Equivalent to 9
+    int X;  // Equivalent to 10
+    int XL; // Equivalent to 40
+    int L; // Equivalent to 50
+    int XC; // Equivalent to 90
+    int C; // Equivalent to 100
+    int CD; // Equivant to 400
+    int D; // Equivalent to 500
+    int CM; // Equivalent to 900
+    int M;  // Equivalent to 1000
+    
+    
+ M = howManyLetters ( UserEnteredInt, 1000);
+	UserEnteredInt = UserEnteredInt % 1000;
+ CM = howManyLetters ( UserEnteredInt, 900);
+	UserEnteredInt = UserEnteredInt % 900;
+ D = howManyLetters ( UserEnteredInt, 500);
+    UserEnteredInt = UserEnteredInt % 500;
+ CD = howManyLetters ( UserEnteredInt, 400);
+    UserEnteredInt = UserEnteredInt % 400;
+ C = howManyLetters ( UserEnteredInt, 100);
+    UserEnteredInt = UserEnteredInt % 100;
+ XC = howManyLetters ( UserEnteredInt, 90);
+    UserEnteredInt = UserEnteredInt % 90;
+ L = howManyLetters ( UserEnteredInt, 50);
+    UserEnteredInt = UserEnteredInt % 50;
+ XL = howManyLetters ( UserEnteredInt, 40);
+    UserEnteredInt = UserEnteredInt % 40;
+ X = howManyLetters ( UserEnteredInt, 10);
+    UserEnteredInt = UserEnteredInt % 10;
+ IX = howManyLetters ( UserEnteredInt, 9);
+    UserEnteredInt = UserEnteredInt % 9;
+ V = howManyLetters ( UserEnteredInt, 5);
+    UserEnteredInt = UserEnteredInt % 5;
+ IV = howManyLetters ( UserEnteredInt, 4);
+    UserEnteredInt = UserEnteredInt % 4;
+ I = howManyLetters ( UserEnteredInt, 1);
+   UserEnteredInt = UserEnteredInt % 1; 
+
+ spitOutLetters (M, "M");
+ spitOutLetters (CM, "CM");
+ spitOutLetters (D, "D");
+ spitOutLetters (CD, "CD");
+ spitOutLetters (C, "C");
+ spitOutLetters (XC, "XC");
+ spitOutLetters (L, "L");
+ spitOutLetters (XL, "XL");
+ spitOutLetters (X, "X");
+ spitOutLetters (IX, "IX");
+ spitOutLetters (V, "V");
+ spitOutLetters (IV, "IV");
+ spitOutLetters (I, "I");
+}
+ 
+int main()
+{
+char DoYouWantToAgain;
+
+   do 
+   { int integer; // Number to be entered.
+    
+ 
+ std::cout << "Please enter an integer: ";
+ std::cin >> integer;
+ 
+
+ if (integer < 0 || integer > 3999)
+ { do
+   {     std::cout << "Invalid number. Please enter an integer between 0 and 3999: ";
+      std::cin >> integer; 
+    } while (integer < 0 || integer > 3999);
+ }
+ 
+ std:: cout << "--> ";
+ converting (integer);
+ std:: cout << std::endl;
+ 
+ std::cout << "Would you like to convert another integer (Y/N)? ";
+ std::cin >> DoYouWantToAgain;
+ 
+   } while (DoYouWantToAgain != 'n' && DoYouWantToAgain != 'N' );
+}
