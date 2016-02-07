@@ -1,5 +1,4 @@
 //
-//  main.cpp
 //  Roman Numeral Converter
 //
 //  Created by Leticia Osuna on 2/3/16.
@@ -38,4 +37,23 @@ int main()
 	} while (choice == "Y" || choice == "y");
 
 	return 0;
+}
+
+string convert(int num)
+{
+	int j = 0;
+	string rom = "";
+	const string romNum[]{ "M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I" };
+	const int numDiv[]{ 1000, 900, 500, 400, 100, 90, 50, 40, 10, 9 , 5, 4, 1 };
+
+	for (int k = 0; k < 13; k++)
+	{
+		for (int j = 0; j < (num / numDiv[k]); j++)
+		{
+			rom += romNum[k];
+		}
+		num %= numDiv[k];
+	}
+
+	return rom;
 }
