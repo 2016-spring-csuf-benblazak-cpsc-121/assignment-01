@@ -1,0 +1,117 @@
+/* ----------------------------------------------------------------------------
+* Copyright &copy; 2016 Aaron Thompson <aamithompson@gmail.com>
+* Released under the [MIT License] (http://opensource.org/licenses/MIT)
+* ------------------------------------------------------------------------- */
+
+/**
+* Converts standard decimal numbers in to Roman numerals.
+*/
+
+#include <iostream>
+#include <string>
+
+std::string getRomanNumeral(int value);
+
+int main()
+{
+	char answer;
+
+	do
+	{
+		std::cout << "Please enter an integer: ";
+		int value = 0;
+		std::cin >> value;
+		std::string numerals = getRomanNumeral(value);
+		std::cout << "--> " << numerals << "\n\n";
+
+		std::cout << "Would you like to convert another integer (Y/N): ";
+		std::cin >> answer;
+		std::cout << "\n\n\n";
+	} while (answer == 'Y' || answer == 'y');
+
+	return 0;
+}
+
+std::string getRomanNumeral(int value)
+{
+	int tempValue = value;
+	std::string numerals;
+	while (tempValue / 1000 > 0)
+	{
+		tempValue -= 1000;
+		numerals += "M";
+	}
+
+	while (tempValue / 900 > 0)
+	{
+		tempValue -= 900;
+		numerals += "CM";
+	}
+
+	while (tempValue / 500 > 0)
+	{
+		tempValue -= 500;
+		numerals += "D";
+	}
+
+	while (tempValue / 400 > 0)
+	{
+		tempValue -= 400;
+		numerals += "CD";
+	}
+
+	while (tempValue / 100 > 0)
+	{
+		tempValue -= 100;
+		numerals += "C";
+	}
+
+	while (tempValue / 90 > 0)
+	{
+		tempValue -= 90;
+		numerals += "XC";
+	}
+
+	while (tempValue / 50 > 0)
+	{
+		tempValue -= 50;
+		numerals += "L";
+	}
+
+	while (tempValue / 40 > 0)
+	{
+		tempValue -= 40;
+		numerals += "XL";
+	}
+
+	while (tempValue / 10 > 0)
+	{
+		tempValue -= 10;
+		numerals += "X";
+	}
+
+	while (tempValue / 9 > 0)
+	{
+		tempValue -= 9;
+		numerals += "IX";
+	}
+
+	while (tempValue / 5 > 0)
+	{
+		tempValue -= 5;
+		numerals += "V";
+	}
+
+	while (tempValue / 4 > 0)
+	{
+		tempValue -= 4;
+		numerals += "IV";
+	}
+	while (tempValue / 1 > 0)
+	{
+		tempValue -= 1;
+		numerals += "I";
+	}
+
+	return numerals;
+}
