@@ -3,18 +3,20 @@
 Copyright © 2016 Philip Dang <philipdang@ymail.com>. All rights reserved.
    -----------------------------------------------------
  */
+
 /*
  A short program to ask user for an integer and print it out in roman numerals.
  */
- 
+
 #include <iostream>
 #include <sstream>
 #include <string>
 
+void Convert(int);
 int main()
 {
     double num;
-    int intnum, m, d, c, l, x, v, i, n;
+    int intnum;
     char yes ='Y';
     
     while (yes == 'y' || yes == 'Y')
@@ -23,23 +25,35 @@ int main()
         std::cin >> num;
         intnum = (int)num;
         std::cout << "--> ";
-        if (intnum >= 1000)             // http://www.cplusplus.com/doc/tutorial/control/
-        {
-            m = intnum / 1000;
-            n = 0;
-            {
-                for (; n < m; n++)
-                    std::cout << "M";
+        Convert(intnum);
+        
+        std::cout << "\nWould you like to convert another integer? (Y/N): ";
+        std::cin >> yes;
+        std::cout << std::endl;
+    }
+    return 0;
+}
+
+void Convert(int intnum)
+{
+int m, d, c, l, x, v, i, n;
+if (intnum >= 1000)             // http://www.cplusplus.com/doc/tutorial/control/
+{
+    m = intnum / 1000;
+    n = 0;
+    {
+        for (; n < m; n++)
+            std::cout << "M";
             }
             intnum = intnum%1000;
-        }
-        
-        if (intnum >= 900)
+            }
+            
+            if (intnum >= 900)
         {
             std::cout << "CM";
             intnum = intnum%900;
         }
-        else if (intnum >= 500)
+            else if (intnum >= 500)
         {
             {
                 d = intnum / 500;
@@ -49,13 +63,13 @@ int main()
             }
             intnum = intnum%500;
         }
-        
-        if (intnum >= 400)
+            
+            if (intnum >= 400)
         {
             std::cout << "CD";
             intnum = intnum%400;
         }
-        else if (intnum >= 100)
+            else if (intnum >= 100)
         {
             {
                 c = intnum / 100;
@@ -65,14 +79,14 @@ int main()
             }
             intnum = intnum%100;
         }
-        
-        if (intnum >= 90)
+            
+            if (intnum >= 90)
         {
             std::cout << "XC";
             intnum = intnum%90;
         }
-        
-        else if (intnum >= 50)
+            
+            else if (intnum >= 50)
         {
             {
                 l = intnum / 50;
@@ -82,13 +96,13 @@ int main()
             }
             intnum = intnum%50;
         }
-        if (intnum >= 40)
+            if (intnum >= 40)
         {
             std::cout << "XL";
             intnum = intnum%40;
         }
-        
-        else if (intnum >= 10)
+            
+            else if (intnum >= 10)
         {
             {
                 x = intnum / 10;
@@ -98,14 +112,14 @@ int main()
             }
             intnum = intnum%10;
         }
-        
-        if (intnum >= 9)
+            
+            if (intnum >= 9)
         {
             std::cout << "IX";
             intnum = intnum%9;
         }
-        
-        else if (intnum >= 5)
+            
+            else if (intnum >= 5)
         {
             {
                 v = intnum / 5;
@@ -115,22 +129,17 @@ int main()
             }
             intnum = intnum%5;
         }
-        if (intnum >= 4)
+            if (intnum >= 4)
         {
             std::cout << "IV";
             intnum = intnum%4;
         }
-        else if (intnum >= 1)
+            else if (intnum >= 1)
         {
             i = intnum;
             n = 0;
             for (; n < i; n++)
                 std::cout << "I";
         }
-        std::cout << "\nWould you like to convert another integer? (Y/N): ";
-        std::cin >> yes;
-        std::cout << std::endl;
-    }
-    return 0;
+    return;
 }
- 
