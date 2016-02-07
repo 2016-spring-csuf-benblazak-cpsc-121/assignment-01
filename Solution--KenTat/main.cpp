@@ -55,7 +55,7 @@ string convert(int number){
   string ret = "";
    for(int i = 0; i < 13; i++)
   {
-    for(int j = 0; j < number/value[i]; j++)
+    while(number >= value[i])
 	{
       ret += romannumeral[i];
       number %= value[i];
