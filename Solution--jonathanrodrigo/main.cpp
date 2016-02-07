@@ -4,7 +4,7 @@
 using std::cout;
 using std::cin;
 using std::endl;
-using std:string;
+using std::string;
 
 string num_to_roman(int x);
 
