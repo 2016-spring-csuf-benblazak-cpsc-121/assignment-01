@@ -1,8 +1,6 @@
-
 /* ----------------------------------------------------------------------------
 * Copyright & copy; 2016 Diem-Huong Bui <diemhuongbui@csu.fullerton.edu>
 * ------------------------------------------------------------------------- */
-
 /*
 * A program used to convert Arabic numbers to Roman Numerals.
 * Last Updated: 5:13pm Tuesday, February 2, 2016
@@ -19,7 +17,12 @@ int main() {
 		std::cout << "Please enter an integer: ";
 		int num;
 		std::cin >> num;
-
+		
+		if(num < 1 || num > 3999){
+		    std::cout << "Error, this integer is not valid.";
+		    break;
+		}
+		
 		romanNumConv(num); //call function
 
 		std::cout << "\n";
@@ -30,7 +33,6 @@ int main() {
 	} while (choice == 'y' || choice == 'Y');
 
 	//end program
-
 	system("pause");
 	return 0;
 }
