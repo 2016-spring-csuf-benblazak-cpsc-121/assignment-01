@@ -22,11 +22,11 @@ int main()
 	string repProgram = "yes";
 
 	// Opening Statement
-	cout << "This program will change a user inputed integer in to a roman numeral.\n" << endl;
+	cout << "This program will change a user inputed integer in to a roman numeral." << endl;
 
 	// Using jump statements for looping
 	wrongNumber:
-	cout << "Please enter an integer: ";
+	cout << "\nPlease enter an integer: ";
 	cin >> number;
 
 	// Verify integer input
