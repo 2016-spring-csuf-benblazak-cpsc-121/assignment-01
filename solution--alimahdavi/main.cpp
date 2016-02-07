@@ -1,3 +1,12 @@
+
+/* ----------------------------------------------------------------------------
+ * Copyright &copy; 2016 alimahdavi <alimahdavi05@csu.fullerton.edu>
+ * Released under the [MIT License] (http://opensource.org/licenses/MIT)
+ * ------------------------------------------------------------------------- */
+
+/**
+ * A short program that converts Arabic integers to Roman Numerals.
+ */
 #include <iostream>
 #include <string>
 
