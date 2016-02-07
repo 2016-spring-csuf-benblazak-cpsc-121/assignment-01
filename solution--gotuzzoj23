@@ -1,0 +1,106 @@
+/*----------------------------------------------------------
+ *copyright & copy, 2016 Jose Gotuzzo <gotuzzoj23@gmail.com>
+ *-------------------------------------------------------- - */
+/**
+ * A program to convert integers to roman numerals.
+ */
+
+
+
+#include <iostream>
+#include <string>
+#include <cctype>
+using std::cin;
+using std::cout;
+using std::endl;
+
+void convertnum(int);
+
+int main() {
+    int num;
+    char question;
+    cout << "Please enter an integer: ";
+    cin >> num;
+    convertnum(num);
+    cout << "Would you like to convert another integer (Y/N)? ";
+    cin >> question;
+    while (toupper(question) == 'Y') {
+        cout << "Please enter an integer: ";
+        cin >> num;
+        convertnum(num);
+        cout << "Would you like to convert another integer (Y/N)? ";
+        cin >> question;
+    }
+    return 0;
+}
+
+void convertnum(int num) {
+    int I, V, X, L, C, D, M, IV, IX, XL, XC, CD, CM;
+    int j; // counter
+    M = num / 1000;
+    num = num % 1000;
+    for (j = 0; j < M; j++) {
+        cout << "M";
+    }
+    CM = num / 900;
+    num = num % 900;
+    for (j = 0; j < CM; j++) {
+        cout << "CM";
+    }
+    D = num / 500;
+    num = num % 500;
+    for (j = 0; j < D; j++) {
+        cout << "D";
+    }
+    CD = num / 400;
+    num = num % 400;
+    for (j = 0; j < CD; j++) {
+        cout << "CD";
+    }
+    C = num / 100;
+    num = num % 100;
+    for (j = 0; j < C; j++) {
+        cout << "C";
+    }
+    XC = num / 90;
+    num = num % 90;
+    for (j = 0; j < XC; j++) {
+        cout << "XC";
+    }
+    L = num / 50;
+    num = num % 50;
+    for (j = 0; j < L; j++) {
+        cout << "L";
+    }
+    XL = num / 40;
+    num = num % 40;
+    for (j = 0; j < XL; j++) {
+        cout << "XL";
+    }
+    X = num / 10;
+    num = num % 10;
+    for (j = 0; j < X; j++) {
+        cout << "X";
+    }
+    IX = num / 9;
+    num = num % 9;
+    for (j = 0; j < IX; j++) {
+        cout << "IX";
+    }
+    V = num / 5;
+    num = num % 5;
+    for (j = 0; j < V; j++) {
+        cout << "V";
+    }
+    IV = num / 4;
+    num = num % 4;
+    for (j = 0; j < IV; j++) {
+        cout << "IV";
+    }
+    I = num / 1;
+    for (j = 0; j < I; j++) {
+        cout << "I";
+    }
+    cout << "\n";
+}
+
