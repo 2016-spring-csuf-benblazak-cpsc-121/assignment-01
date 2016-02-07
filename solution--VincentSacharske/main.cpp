@@ -47,6 +47,12 @@ string convert(int integer)
 	
 	string ret = "   ";
 
+	if (integer <= 0)
+		return "Please enter an integer greater than 0.";
+	if (integer >= 4000)    
+		return "Please enter an integer less than 4000.";
+
+
 	int a = 0;
 	
 	while (a < 13)
