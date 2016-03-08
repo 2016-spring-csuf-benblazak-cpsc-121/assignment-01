@@ -1,3 +1,12 @@
+/* ----------------------------------------------------------------------------
+* Copyright &copy; 2016 Zheantezsa Guizar <zheanguizar99@csu.fullerton.edu>
+* Released under the [MIT License] (http://opensource.org/licenses/MIT)
+* ------------------------------------------------------------------------- */
+
+/**
+* Converting numbers to Roman Numerals.
+*/
+
 #include <iostream>
 #include <string>
  
